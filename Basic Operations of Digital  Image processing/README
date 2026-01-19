@@ -1,0 +1,64 @@
+# Basic MATLAB Image Processing Operations
+
+## Purpose
+To perform basic image processing operations in MATLAB such as matrix generation, image display, grayscale conversion, color channel extraction, and binary image creation.
+
+---
+
+## Code Used
+```matlab
+clc
+close all
+clear all
+
+% Matrix Generation
+I = uint8(rand(8,8) * 255);
+disp(I);
+imshow(I);
+
+% Image to Grayscale
+Image = imread('Image.jpg');
+imshow(Image);
+figure();
+Image_Gray = rgb2gray(Image);
+imshow(Image_Gray);
+
+% Red Channel Extraction
+Image_Red = Image;
+figure();
+Image_Red(:,:,2) = 0;
+Image_Red(:,:,3) = 0;
+imshow(Image_Red);
+
+% Black and White Conversion
+B_W = Image_Gray > 50;
+uint8(B_W);
+figure();
+imshow(B_W);
+Operations Performed
+
+Clears command window, workspace, and closes figures
+
+Generates a random matrix and displays it as an image
+
+Reads and displays an RGB image
+
+Converts RGB image to grayscale
+
+Extracts and displays the red color component
+
+Converts grayscale image to black and white using thresholding
+
+Output
+
+Random grayscale matrix image
+
+Original RGB image
+
+Grayscale image
+
+Red-channel image
+
+Binary black and white image
+
+The program demonstrates fundamental MATLAB image processing operations and shows how images can be manipulated using simple matrix-based techniques.
